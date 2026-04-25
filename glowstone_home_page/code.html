@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@200;300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fcf9f4",
+                    "on-primary-container": "#7dbaa9",
+                    "on-secondary-container": "#785a1a",
+                    "on-tertiary-fixed-variant": "#40484a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f4",
+                    "surface-variant": "#e5e2dd",
+                    "tertiary": "#252d2f",
+                    "surface-dim": "#dcdad5",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-bright": "#fcf9f4",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c0c8ca",
+                    "on-surface": "#1c1c19",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#a7afb2",
+                    "outline": "#707975",
+                    "tertiary-fixed": "#dce4e6",
+                    "on-secondary-fixed": "#261900",
+                    "secondary-container": "#fed488",
+                    "on-primary-fixed": "#00201a",
+                    "inverse-primary": "#95d3c1",
+                    "secondary": "#775a19",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#0a5043",
+                    "outline-variant": "#bfc9c4",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#31302d",
+                    "on-background": "#1c1c19",
+                    "surface-container-high": "#ebe8e3",
+                    "primary-fixed-dim": "#95d3c1",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-fixed": "#151d1f",
+                    "surface-tint": "#2b695a",
+                    "primary": "#003229",
+                    "surface-container-highest": "#e5e2dd",
+                    "secondary-fixed-dim": "#e9c176",
+                    "primary-fixed": "#b0efdd",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3b4345",
+                    "on-surface-variant": "#404945",
+                    "primary-container": "#004b3e",
+                    "surface-container": "#f0ede8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Noto Serif"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-white/80 backdrop-blur-xl transition-colors duration-500 shadow-[0_4px_40px_rgba(28,28,25,0.04)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-['Noto_Serif'] font-bold tracking-[0.2em] text-emerald-950">GloWStone</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 hover:text-amber-700 transition-all duration-300" href="#">Catalog</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 hover:text-amber-700 transition-all duration-300" href="#">Collections</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-950 border-b border-emerald-900/20 pb-1" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 hover:text-amber-700 transition-all duration-300" href="#">Stones</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 hover:text-amber-700 transition-all duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-6 text-emerald-900">
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-700 transition-all duration-300" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-700 transition-all duration-300" data-icon="favorite">favorite</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-700 transition-all duration-300" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+</nav>
+<main>
+<!-- 1. Hero Section -->
+<section class="relative h-screen w-full flex items-center overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0">
+<img alt="Macro jewelry" class="w-full h-full object-cover opacity-60" data-alt="Macro extreme close-up of a dark emerald gemstone set in textured raw gold, dramatic side lighting, moody shadows, high-end editorial jewelry photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbQ6vBqMkxtgsIHHIeXQ99HwPFV-VIUmH7xQMUIsRL5434EoeR5N_mVZ8rloitWxJ1SWt5VqRmrt4Nsnor0H5ADvoPClCdh2W_TXUMwCY4XKAbPp5SqPsNPJxOpOBdx4l5S4_OHB5dY98ImfkzIax1EEGMcc8GpI56z9il4-w3bCvaxKFZjjMizMB2UkrD6LyD-VY9kl0XMC13gbT1VdFRUstLIwqyAiBZEGW1t5lQqnTM4c9C2-CfyWl6ITQuSKqGUU-Qbwoua8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-12 pt-24">
+<div class="max-w-4xl">
+<h1 class="text-white font-headline text-5xl md:text-8xl leading-tight mb-12 tracking-tight">
+                        Украшения с характером, фактурой и историей.
+                    </h1>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<button class="w-full md:w-auto px-12 py-5 bg-white text-primary text-sm font-label tracking-widest uppercase hover:bg-surface-container-high transition-all duration-500 rounded-none">
+                            В каталог
+                        </button>
+<a class="text-white text-sm font-label tracking-widest uppercase border-b border-white/20 pb-2 hover:border-white transition-all duration-500" href="#">
+                            Коллекции
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Brand Essence Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<img alt="Philosophical essence" class="w-full h-[600px] object-cover" data-alt="A minimalist artistic still life with a singular raw crystal and a piece of jewelry resting on a smooth stone, soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoxoPGfv4xPEm9wfjVAf9ePig3v9-Uky6n9wDqf1POkYZrkZyJKBm1VRXxzjyh4cYoHz-PietPw_Rmou0wAvwPYP4JaL6gz_Zt6gjT4s6JSCe7_43ct6ByM_bkxkOz2NGjcCb71Jq4NS18bShQx2jalSl5y1FBKGhLwQwER-2ar9JxmSFseWVxpy5y5o6hDWqRyx-w7mZF5CNYPDtzLmA-KdryIJBz2_0iGSnZHiw3ftF72spabAlpWGb_xPOVbgBvvcN0MKzE3yE"/>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="font-headline text-4xl md:text-5xl text-primary lowercase italic">Философия GloWStone</h2>
+<p class="text-on-surface/80 text-xl font-light leading-relaxed max-w-lg">
+                        Мы верим, что украшение — это не просто аксессуар. Это продолжение вашей личности, овеществленная эмоция, предмет, обладающий собственной душой и историей, которая переплетается с вашей.
+                    </p>
+<div class="pt-8">
+<div class="w-16 h-px bg-secondary mb-4"></div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-on-surface/40">The Curator's Note</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Materials & Stones Section -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-12 mb-16 flex justify-between items-end">
+<h2 class="font-headline text-4xl md:text-6xl text-primary">Материалы Земли</h2>
+<span class="font-label text-sm uppercase tracking-widest text-on-surface/60">Scroll to explore</span>
+</div>
+<div class="flex gap-8 overflow-x-auto px-12 hide-scrollbar snap-x snap-mandatory">
+<!-- Material 1 -->
+<div class="min-w-[320px] md:min-w-[450px] snap-center bg-surface-container-lowest p-8 space-y-6">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Natural stones" class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-700" data-alt="Macro close-up of rough unpolished labradorite stones showing blue and green iridescent flashes on a neutral stone background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeZW9fcplzaSuEheldRtq5FRlCvGlYnlQBwX4CGYjS5Nt18c-sgF9h0-yznL-OdGm-U-A4GdFUZUSl7xrabGzrmuyhMrjmps7zhbpSMIAxTKhbWuDwTsAY3DNfIPB5sw5Kw4dxsAFYQuEGusqC_NL5QwKFaG7RrIWpTmxE0k80L_GsrdAiygX6XVf97IhwO1lQMRBnd7H37uC58EBb36oZWiulQKPn7c3CTi1X6cv7vXAkKg_L7-Q6n37P0hn4Lt9m757ix8RE0EU"/>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-2xl">Натуральные камни</h3>
+<p class="text-sm text-on-surface/70 leading-relaxed font-body">Несовершенства, которые делают каждый камень уникальным. Мы выбираем только те экземпляры, что хранят в себе энергию веков.</p>
+</div>
+</div>
+<!-- Material 2 -->
+<div class="min-w-[320px] md:min-w-[450px] snap-center bg-surface-container-lowest p-8 space-y-6">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Pearl and Mother of pearl" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Macro shot of organic shaped baroque pearls with soft luster resting on a bed of fine white sand, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDEo8Uxkj6Y3FRJpOrgJHjgXcd_dgBGe6zBhnyoV3JZNZwqecYOKjKaGpyU6-SOFj_XRJItKvlWiBhr4-gva1Yd9KGT_6HNzxr1RwNfPbDvnrweC2MKDBoZhk_6hpjr3wOqqaIvgTRf_aE-GcFmuEisIoAgggKFvBthaM-h6qJ_mYnl6uNzL8eoo2W8EaGNhauUznk8SaacUIvRoMClkXUlFGEytdachJBFa5rQHBhFZdeA2cq5HnZsTHOkmJW3NJ7BkLmNRWvd6Y"/>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-2xl">Жемчуг и перламутр</h3>
+<p class="text-sm text-on-surface/70 leading-relaxed font-body">Символы глубины и чистоты. Используем органические формы, подчеркивающие морское происхождение каждой жемчужины.</p>
+</div>
+</div>
+<!-- Material 3 -->
+<div class="min-w-[320px] md:min-w-[450px] snap-center bg-surface-container-lowest p-8 space-y-6">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Eco-resin with flowers" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Highly detailed macro image of tiny dried blue flowers suspended inside a clear crystalline structure, ethereal glowing light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQeEwHFJiBsso9BO8QbfCgUcrHshvzye2riu9smX2haKZ1h_M0WSF4t7kZiS4J2xQClm6XN3XB1TOywrLYh19teHpztMWPySRgbtei9Z03BQSpfvTR_LupnoUhCBkT30FwbLWCTwTha4MlgzLdD0mc5noHPbrzTfMHZJcoWzWnEZOULExjrw23Op0uRFw4JYPQQ1df3kro09ctvtr6kNf6tFzgIAyHuVSzXTgpEkfA3Q5bp57P5r5gqD_1_aVhOkTI5MlBED7yPWY"/>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-2xl">Эко-смола с цветами</h3>
+<p class="text-sm text-on-surface/70 leading-relaxed font-body">Остановленный момент цветения. Ручной сбор полевых трав и цветов, заключенных в прозрачную вечность.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Featured Collections -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="space-y-32">
+<!-- Collection 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 aspect-[16/9] overflow-hidden">
+<img alt="Pearl Collection" class="w-full h-full object-cover" data-alt="Close-up of a woman's neck wearing a long necklace with large organic pearls, silk dress background, warm cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTGk3xAssEZB3hbdCfu--G5u0R-qA8pzTPiUe_zyLgEsBfaxnKm4eCcifzreruGEntzhQQuZjjgvwNJb071_Bn88PexH-Cp5exrPivgxQ3Iul5fWk59XsXGib65YR71MY6zDB9ML8c5xr1qMgTXiFU-d83Xwy8StJWj-4qZNH0E507OBN-pNKNkhpADz-t9Vb9VaA96Xly0_AY8UIvSw0vQwG8b5Ps3ztXFN6l6fPyoT3XPAOlzfW94R8t6hAYIR7aNqqYo-uv3TM"/>
+</div>
+<div class="md:col-span-5 md:pl-12 space-y-6">
+<h3 class="font-headline text-4xl leading-tight">Жемчуг и перламутр</h3>
+<p class="text-on-surface/70 font-light">Коллекция, вдохновленная тишиной океанских глубин и мягким сиянием луны.</p>
+<a class="inline-block font-label text-sm tracking-widest uppercase text-secondary border-b border-secondary/20 pb-1 hover:border-secondary transition-all" href="#">View collection</a>
+</div>
+</div>
+<!-- Collection 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 md:order-1 order-2 space-y-6 md:pr-12">
+<h3 class="font-headline text-4xl leading-tight">Камни и позолота</h3>
+<p class="text-on-surface/70 font-light">Союз необработанной силы камня и благородного металла. Для тех, кто ценит земную мощь.</p>
+<a class="inline-block font-label text-sm tracking-widest uppercase text-secondary border-b border-secondary/20 pb-1 hover:border-secondary transition-all" href="#">Explore stones</a>
+</div>
+<div class="md:col-span-7 md:order-2 order-1 aspect-[16/9] overflow-hidden">
+<img alt="Stone Gold Collection" class="w-full h-full object-cover" data-alt="Top view of several gold rings with rough unpolished amethyst and citrine stones on a black textured surface, moody dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLZoWKaQ1j7lRcYIcEiO49fdzGpZKn01yJ2jkJvBcycpmHIuCEKncuBqUyK8ck8r3eLDUayBMjO5yWIsjFIg2gUvLe7_FrN54ITPKh4S86QFfrZ844--WfOacyfvKmbvRC0PJffrBLRbjVxDjehfHHwgKvdMPBFWA1VrqOKI6A9DqRjieVL-ebLyB6s_ko-LGI0B7c002os74KXDSMlM6rE4hWVxl_W9KUxGbOQ0Zr77Eeeb6iI4Zf2yY5YOxyJPVCnc_o6XRjnBM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Craftsmanship Section -->
+<section class="py-32 bg-primary text-white">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+<h2 class="font-headline text-5xl md:text-7xl lowercase italic">Как рождается изделие</h2>
+<p class="max-w-md text-white/60 font-light leading-relaxed">Наше производство — это медитативный процесс, где каждый этап требует полной концентрации и уважения к материалу.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="space-y-8 group">
+<div class="text-secondary font-headline text-6xl opacity-30">01</div>
+<h4 class="font-headline text-2xl tracking-wide">Selection of stones</h4>
+<div class="aspect-square overflow-hidden bg-white/5">
+<img alt="Step 1" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="Hands sorting through a variety of raw colorful minerals and gemstones on a wooden workbench, warm overhead light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-PbSUs0xX4I1MO1rfdSgah4hFg1fXn0p2o7rITemoiGjwdx8tiaCNEnPLD1JWWFnZHmIt0aWzEcju9a5ABrDFmLmV19_db0Lf7Z7acly4Tg6PWYx7EaiS1RgsYGQKqjGKw8TY9ppEdwvcN8a-uyHzcl9o0o4l1PiIj3O4kp5NFywKzrX0drtIOSKS_91_ngDYDsqBSqVhTUbn82Cfi1IW0pjBi1XhJ9ecMEpfFqWWCY_226ASYRlPn0rSHliWMY_T1wmgIf3qQ8"/>
+</div>
+<p class="text-sm text-white/50 leading-relaxed font-body">Мы отбираем только камни с особым рисунком и энергией, отсеивая сотни вариантов.</p>
+</div>
+<div class="space-y-8 group">
+<div class="text-secondary font-headline text-6xl opacity-30">02</div>
+<h4 class="font-headline text-2xl tracking-wide">Composition</h4>
+<div class="aspect-square overflow-hidden bg-white/5">
+<img alt="Step 2" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="Jewelry designer sketching a complex organic necklace design next to several loose pearls and stones, creative workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI7OJPb9xrcWidjLT9GQPUvUImHF8RqGsQWrb1Jzmg5JlrxUS4u-WQBRradJKvfzagu6W-Hdg6LuQCVOHh06QggZmhsIYWdEF1yx8aY1KZHZS5sXCj0ayOpsufyXBVMkLI8rveRDHsLOyLZpydWQvcjcVPDrImrI3M1QE9G7uRcGr3zS1nj0coObbKAIEp4uYYZnBtNJCPuHxjV6lahmFAwUr5ZuFGhRsr6hcV9PVTNqB5Xaq2f04b6fGkh5yGNzY59TgzxG7QRF8"/>
+</div>
+<p class="text-sm text-white/50 leading-relaxed font-body">Поиск идеального баланса форм и текстур. Дизайн создается вокруг природной формы камня.</p>
+</div>
+<div class="space-y-8 group">
+<div class="text-secondary font-headline text-6xl opacity-30">03</div>
+<h4 class="font-headline text-2xl tracking-wide">Handcrafting</h4>
+<div class="aspect-square overflow-hidden bg-white/5">
+<img alt="Step 3" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="Close up of artisan hands using professional jewelry tools to set a stone into a gold ring mounting, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRrFpRz-sNEHR6Jv-ygZZkchpcISay-8Ht2yvsTaXLfJX4ih57ZUKVgqvHHSpCvw7l2aBtpLcunHyo7jTNUt-gSAfahNEnsWZ9x13_hVJKjeatc0sd79QRwIHSocuIA579nKni6w01HIUiMO5QsmFBGgGlvuhyds-4bqRev_ims3mGykee6TuCHVicV5Rj6SWt_dyUIDBCUSWK-GFAjEl2tcEdpRArykcimuaCNUXB3qhMnAFotkpckO3lv25s64Ws3vnKO4Wz35A"/>
+</div>
+<p class="text-sm text-white/50 leading-relaxed font-body">Финальная сборка и полировка. Каждый узел и крепление проверяются вручную.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Emotional Navigation -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-12 text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl text-primary mb-6">Украшения по настроению</h2>
+<p class="text-on-surface/50 font-label tracking-[0.2em] uppercase text-xs">Choose your current resonance</p>
+</div>
+<div class="max-w-screen-xl mx-auto px-12 grid grid-cols-2 md:grid-cols-5 gap-4">
+<button class="aspect-square flex flex-col items-center justify-center border border-outline-variant/20 hover:bg-surface-container transition-all group">
+<span class="material-symbols-outlined text-3xl mb-4 text-primary group-hover:scale-110 transition-transform" data-icon="air">air</span>
+<span class="font-label text-xs uppercase tracking-widest">Нежность</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center border border-outline-variant/20 hover:bg-surface-container transition-all group">
+<span class="material-symbols-outlined text-3xl mb-4 text-primary group-hover:scale-110 transition-transform" data-icon="shield">shield</span>
+<span class="font-label text-xs uppercase tracking-widest">Защита</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center border border-outline-variant/20 hover:bg-surface-container transition-all group">
+<span class="material-symbols-outlined text-3xl mb-4 text-primary group-hover:scale-110 transition-transform" data-icon="water_drop">water_drop</span>
+<span class="font-label text-xs uppercase tracking-widest">Глубина</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center border border-outline-variant/20 hover:bg-surface-container transition-all group">
+<span class="material-symbols-outlined text-3xl mb-4 text-primary group-hover:scale-110 transition-transform" data-icon="balance">balance</span>
+<span class="font-label text-xs uppercase tracking-widest">Баланс</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center border border-outline-variant/20 hover:bg-surface-container transition-all group">
+<span class="material-symbols-outlined text-3xl mb-4 text-primary group-hover:scale-110 transition-transform" data-icon="celebration">celebration</span>
+<span class="font-label text-xs uppercase tracking-widest">Праздник</span>
+</button>
+</div>
+</section>
+<!-- 7. Collaborations & Events -->
+<section class="py-32 bg-surface-container">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<span class="font-label text-xs tracking-widest text-secondary uppercase">Upcoming events</span>
+<h2 class="font-headline text-5xl text-primary leading-tight">Встречи и коллаборации</h2>
+</div>
+<div class="space-y-8">
+<div class="flex gap-8 items-start border-b border-outline-variant/30 pb-8 hover:bg-white/30 transition-colors p-4">
+<div class="text-primary font-headline text-xl">12.05</div>
+<div class="space-y-2">
+<h4 class="font-bold tracking-wide text-sm">ART-Market Festival</h4>
+<p class="text-xs text-on-surface/60 font-body">Презентация летней коллекции «Цветы в смоле». Москва, Винзавод.</p>
+</div>
+</div>
+<div class="flex gap-8 items-start border-b border-outline-variant/30 pb-8 hover:bg-white/30 transition-colors p-4">
+<div class="text-primary font-headline text-xl">28.05</div>
+<div class="space-y-2">
+<h4 class="font-bold tracking-wide text-sm">GloWStone x EcoLife Workshop</h4>
+<p class="text-xs text-on-surface/60 font-body">Мастер-класс по созданию кулонов с сухоцветами. Петербург.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img alt="Events" class="w-full aspect-[4/5] object-cover" data-alt="Art exhibition space with minimalist pedestals displaying jewelry, soft spotlighting, high ceilings, modern architectural interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtPggP4LuTHLJikmLTADKwr0EE57qw8a9q-dyzujLbz0gmiu3S25UGg6mNJfaKcUoVnhBPerISSG41fV7DaxYZ7hlT56Kpyl_dQmidT7ep2dOn--5OcLhROyVHgjr62H8dBgoU8DNvVuL9HpQ5vqxYT_AxCJdHri2lT04Tl8YWV2lbhfLAPzgVeU0RtLSnyEwz0S6yN8HQAxUtHouL0tewjfEFuZKrjcBXPzYyN2hgLpiPL7zXNgNGAO8UYQXiPsV4wA3dVzKwZUI"/>
+<div class="absolute -bottom-12 -left-12 bg-white p-10 hidden lg:block shadow-xl">
+<p class="font-headline text-lg italic text-primary">"Создаем сообщество людей, ценящих осознанность и красоту момента."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Final CTA -->
+<section class="py-48 bg-surface text-center">
+<div class="max-w-2xl mx-auto px-6 space-y-16">
+<h2 class="font-headline text-5xl md:text-7xl text-primary lowercase italic">Найти свое украшение</h2>
+<div class="flex flex-col gap-6 items-center">
+<button class="w-full py-5 bg-primary text-white text-sm font-label tracking-widest uppercase hover:bg-primary-container transition-all rounded-none">
+                        Перейти в каталог
+                    </button>
+<div class="flex flex-wrap justify-center gap-10 pt-4">
+<a class="font-label text-xs tracking-widest uppercase text-on-surface/60 hover:text-secondary transition-colors" href="#">Custom Order</a>
+<a class="font-label text-xs tracking-widest uppercase text-on-surface/60 hover:text-secondary transition-colors" href="#">Consultation</a>
+<a class="font-label text-xs tracking-widest uppercase text-on-surface/60 hover:text-secondary transition-colors" href="#">Gift Cards</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-none pt-24 pb-12 mt-24 border-t border-emerald-900/5 bg-emerald-50 text-emerald-900">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="font-['Noto_Serif'] text-lg font-semibold text-emerald-950">GloWStone</div>
+<p class="font-['Manrope'] text-xs tracking-wide leading-relaxed text-emerald-900/50">© 2024 GloWStone. Crafted for the intentional soul.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-xs uppercase tracking-widest text-emerald-950">Jewelry</h5>
+<ul class="space-y-2">
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300" href="#">Rings</a></li>
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300" href="#">Bracelets</a></li>
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300 font-bold text-amber-700" href="#">Earrings</a></li>
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300" href="#">Necklaces</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-xs uppercase tracking-widest text-emerald-950">Connect</h5>
+<ul class="space-y-2">
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300" href="#">Instagram</a></li>
+<li><a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 hover:text-emerald-950 transition-colors duration-300" href="#">Telegram</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="font-bold text-xs uppercase tracking-widest text-emerald-950">Newsletter</h5>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-emerald-900/20 py-2 focus:border-secondary outline-none text-xs font-body transition-colors" placeholder="Email address" type="email"/>
+<button class="absolute right-0 bottom-2 text-secondary font-label text-[10px] uppercase tracking-tighter">Submit</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,11 @@
+node_modules
+.next
+.next-dev
+.playwright-mcp
+out
+dist
+coverage
+.env*
+!.env.example
+.superpowers
+*.tsbuildinfo

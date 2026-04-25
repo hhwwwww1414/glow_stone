@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Manrope:wght@200;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fcf9f4",
+                    "on-primary-container": "#7dbaa9",
+                    "on-secondary-container": "#785a1a",
+                    "on-tertiary-fixed-variant": "#40484a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f4",
+                    "surface-variant": "#e5e2dd",
+                    "tertiary": "#252d2f",
+                    "surface-dim": "#dcdad5",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-bright": "#fcf9f4",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c0c8ca",
+                    "on-surface": "#1c1c19",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#a7afb2",
+                    "outline": "#707975",
+                    "tertiary-fixed": "#dce4e6",
+                    "on-secondary-fixed": "#261900",
+                    "secondary-container": "#fed488",
+                    "on-primary-fixed": "#00201a",
+                    "inverse-primary": "#95d3c1",
+                    "secondary": "#775a19",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#0a5043",
+                    "outline-variant": "#bfc9c4",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#31302d",
+                    "on-background": "#1c1c19",
+                    "surface-container-high": "#ebe8e3",
+                    "primary-fixed-dim": "#95d3c1",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-fixed": "#151d1f",
+                    "surface-tint": "#2b695a",
+                    "primary": "#003229",
+                    "surface-container-highest": "#e5e2dd",
+                    "secondary-fixed-dim": "#e9c176",
+                    "primary-fixed": "#b0efdd",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3b4345",
+                    "on-surface-variant": "#404945",
+                    "primary-container": "#004b3e",
+                    "surface-container": "#f0ede8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #fcf9f4; color: #1c1c19; }
+        .serif-display { font-family: 'Noto Serif', serif; }
+        .glass-header { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 rounded-none bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-[0_4px_40px_rgba(28,28,25,0.04)] transition-colors duration-500">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-['Noto_Serif'] font-bold tracking-[0.2em] text-emerald-950 dark:text-emerald-50">GloWStone</div>
+<nav class="hidden md:flex items-center space-x-12">
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Catalog</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Collections</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-950 dark:text-white border-b border-emerald-900/20 pb-1 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Stones</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Journal</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-50 hover:text-amber-700 transition-colors">search</button>
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-50 hover:text-amber-700 transition-colors">favorite</button>
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-50 hover:text-amber-700 transition-colors">shopping_bag</button>
+</div>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Macro texture of raw emerald stone" class="w-full h-full object-cover grayscale opacity-20 scale-110" data-alt="Macro close-up of a raw dark emerald gemstone showing natural crystalline structures and deep green fractures with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxO1oX11f0J-XlJL6oqOoolcUiJGurRf4_M7ZPbwOUyr9-yxXBDlXCTC_n58TCrpzr5X5lAwd_tkNR9z2MzAwqJ8uTXCNfyeLIiy7J3ld9z_59nVf225xjCvQV907HdtdKjtZ-WUoMLwflfSUFEYo0dw_48UA1_mPuAKhtkdPmoWkKaOlP82sd9Ydycjr3T54TcmMMfhrcIs9Gj_1bjsSTZeT7nKYlifDDcyWjSXUvKDdY99GJwSAecZ5aaRvhhkd9PnY05o_YDi0"/>
+</div>
+<div class="max-w-screen-2xl mx-auto px-12 relative z-10 w-full grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-7">
+<span class="font-label text-xs tracking-[0.4em] uppercase text-secondary mb-6 block">The Digital Curator</span>
+<h1 class="serif-display text-7xl md:text-9xl leading-[0.9] tracking-tighter text-primary mb-12">
+                        Искусство <br/> Вне Времени
+                    </h1>
+</div>
+<div class="md:col-span-5 self-end pb-12">
+<p class="font-body text-lg leading-relaxed text-on-surface-variant max-w-sm">
+                        GloWStone — это не просто украшения. Это материальное воплощение тишины, природы и осознанного выбора.
+                    </p>
+</div>
+</div>
+</section>
+<!-- За брендом (The Artisan) -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<img alt="Portrait of the founder" class="w-full aspect-[4/5] object-cover grayscale" data-alt="Elegant portrait of a jeweler in a sunlit studio, focused expression, wearing simple linen clothing, cinematic soft lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLWwWEUOoBKv2U6BImr6D2uZS3w45Sb7QEA3wHe0L99_xcmOxCAAdoubJhT7OA0jgejda1BbXqat8uKnq74F127HP8SkeXOcYxlT-fCgRGYedssCUJfDP1GXnmT09RXtzzw1Q0QdQG8w1QtWhf8dBLOsJ-DsI1mB8c_E3MCNZOPLFvWF4YOScLLkefv_YpzJDWDHCjMzjoq0WetCMXGZIBLkwiLkh_yMDegP2Qb5gzhYX2Z1idSbpvzkmpZfgTRJuaEg_-Vggf5Vo"/>
+<div class="absolute -bottom-12 -right-12 p-12 bg-primary text-on-primary max-w-xs hidden md:block">
+<p class="serif-display italic text-xl leading-relaxed">
+                            "Красота не в симметрии, а в истории, которую хранит каждый камень."
+                        </p>
+<p class="font-label text-xs uppercase tracking-widest mt-6 opacity-60">— Елена Г., Основательница</p>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="serif-display text-5xl text-primary leading-tight">За брендом</h2>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+                        Всё началось с одного необработанного кристалла кварца, найденного в горах Алтая. Это была встреча, изменившая восприятие формы. Елена, вдохновленная японской философией ваби-саби и архитектурным минимализмом, создала GloWStone как убежище для тех, кто ценит тактильную связь с землей.
+                    </p>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+                        Каждое изделие проходит через руки мастера — от подбора камня в частных коллекциях до финальной полировки, сохраняющей природную душу материала.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Философия (Editorial Style) -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="flex flex-col md:flex-row gap-24 items-start">
+<div class="w-full md:w-1/3 sticky top-32">
+<h2 class="serif-display text-6xl text-primary leading-none sticky top-32">Наша <br/> Философия</h2>
+<div class="mt-12 h-0.5 w-12 bg-secondary/30"></div>
+</div>
+<div class="w-full md:w-2/3 space-y-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<img alt="Jewelry making process" class="w-full aspect-square object-cover" data-alt="Extreme close-up of skilled hands working with silver wire and a raw emerald, scattered stone dust, soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3gdYsWXBdjtBWyCV_jho6h6_OWATrkqEgAY-K7R3IsuGjmhEzWv78fpERBvH82C-GCqQZWRyGm4I3s1t0IgqaKML94xBJfRFMJl0Y0ngl7zf2OaZ5rPKCzhTJKm7x__tsrxBbDvGEH569YS12mF29yFv54UX6Jxejs5gQvYIEtWAqWSszKAHS34HBsl86sikUkC9Oz5sCBr4P9Lig9qC37b1GiP2Zi0kupcGBMHcLAx92C9LE-OneJhlAEy4hNAHFxSSAhoOwlGs"/>
+<div class="space-y-4">
+<h3 class="serif-display text-2xl text-primary">Медленный дизайн</h3>
+<p class="font-body text-on-surface-variant">Мы отрицаем массовость. Мы создаем по одной вещи за раз, позволяя материалу диктовать форму, а не наоборот. Это диалог между человеком и камнем.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-4 order-2 md:order-1">
+<h3 class="serif-display text-2xl text-primary">Честность материалов</h3>
+<p class="font-body text-on-surface-variant">Только переработанное серебро, золото высшей пробы и камни с прозрачной историей происхождения. Мы верим в этику роскоши.</p>
+</div>
+<img alt="Natural raw materials" class="w-full aspect-square object-cover order-1 md:order-2" data-alt="Collection of raw gemstones, gold nuggets, and rough crystals on a linen cloth, earthy tones, soft top lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVv4CuZTQE4ZiMTmZKMEDgW1whc5WpfcUksaTA9p31wZp1qaMFQ82g2KasWfug1IBToIhTpQoupQVpoCF8ehYjNmE-a_OZRZ4u16EJUvbxxPu7tqRiwa7kWKS8Gdd-UGGyno-BRW6mCMu0cJyHP--KAFZ0gwoBkfTboHmo2Xy-oKbrseRbHvL5CTo0HSWjRHDk-cV6BgeJ5FdTAotl-cF3HguUM5eS6Tkn8lZSi9xF97IJfoyUK3Mhc4OgVGkxp9OboMDHYojSmSM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Атмосфера мастерской (Gallery Bento) -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="mb-16">
+<h2 class="serif-display text-5xl text-primary mb-4 text-center">Атмосфера мастерской</h2>
+<p class="text-center font-body text-on-surface-variant/70 uppercase tracking-widest text-xs">Место, где рождаются смыслы</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 h-[1024px]">
+<div class="md:col-span-4 h-full relative overflow-hidden group">
+<img alt="Workshop desk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Artisanal jeweler workbench with antique tools, magnifying glass, and scattered small gems, warm nostalgic lighting, dark wood background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyklFky8H6zp5-XCGLlwSCSY9rAaNDiK81xkOWqYaEPkmxCpHB_oB1UtqpF1GcEmyIcf9OnGKdxOF-pSK7PkAXtHD18Ai-RrZAtJIOWITZN8Q6k1OkWART3Kvs4gXu7Xo1Htrd9Dl96iOptmNhVZVWLQFYwXrqEk1pHoZMcWOnaIWAdBvV0lkPu6cp4bUFbVbqjhdqcLMlhnmp3rETTwad9R1nrTZo_PH48lSPhm8om185m2BPKr8m7RBE-aQPoDyxRSD7H9XxYQQ"/>
+</div>
+<div class="md:col-span-8 grid grid-rows-2 gap-4 h-full">
+<div class="grid grid-cols-2 gap-4">
+<div class="relative overflow-hidden group">
+<img alt="Stone collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A jar of raw semiprecious stones on a sun-drenched windowsill, soft bokeh background of a green garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnLmpTaCrS4QNFOgWi5k2fg1R5Ed3h41rhcRmTshvVwOzje4fojxP9nioU1t3eIfNQrNU3dOAZuphO1_EPLYR6GGHycFuhC22qNiJVIOQ3EMPuOlpI3mZHSnpRhMPbrSzkjwbPeZf0HWJSgf-7L-giRm9hoLl0MHlHiq3yDrRo_WC0sqZBiz199zN0j2Tfwk30s6bRlc-f9vyYr8unKp1F19H2wQoiqS9gwmOVVF4BzvIPx361FcZ9vt1MMLqoI7scUOHJ3K9-q4U"/>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Hands etching" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a hand holding a small torch to solder a silver ring, bright orange spark, dark industrial setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB89nXbnOkQFdtgvaFUICgcalp_wTLBU8As69d6lE-yMb7jvfH8PkxStkEnJ-N-F2yL_P0tsjMSPgwfzgUJ_rrvEY1LW22z_VKkJioVNodbqbgKLQo84hzFqGNQMxoGTTIeI8ejgyhg-feNNrn5tUTqttmt54w4PnlS7Iyd1y0crYeK8Dh-6VBosCk-fufyatf_z7-14kszKV8ihIxlr4oRVSEYJ-hAsXkndu_nOBnLPhbJhnLBpEFtYlXJXC8Mq6l1aPMWQWt-0eI"/>
+</div>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Workshop overall" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide shot of a minimalist high-end jewelry atelier with white walls, wooden shelves, and large windows, clean and peaceful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgzP3pMUE80QYYrXqcP1EQKl3JJAGV6wwCkxT6GfONqk4Dkbv72Dms0E3U7rfSs7-RRNKvIAV2ePOGJI0DkWLNk3ezWePMst6sLK1D-NVyIq7l9F5W-qj2aVjnOxfSHWsyccO91KIC3_4TltMv5RPZCtUv_iZ9JBCqi2gl4dXfpLPMg8uux_DRENo8O1qq08ixNKV2rvCOAfYy4EOqTI9W9Mdp-36yRJechb9ek73ts-dH_QjPsJqiXnHEozuYFfeHE5psAbr_yOU"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Наши ценности -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="space-y-6 text-center">
+<span class="material-symbols-outlined text-4xl text-secondary">eco</span>
+<h3 class="serif-display text-xl text-primary">Натуральность</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Мы работаем только с камнями, сохранившими свою природную структуру и энергию земли.</p>
+</div>
+<div class="space-y-6 text-center">
+<span class="material-symbols-outlined text-4xl text-secondary">back_hand</span>
+<h3 class="serif-display text-xl text-primary">Ручной труд</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Каждая закрепка, каждая грань — результат многочасовой работы мастера, а не бездушного станка.</p>
+</div>
+<div class="space-y-6 text-center">
+<span class="material-symbols-outlined text-4xl text-secondary">psychology_alt</span>
+<h3 class="serif-display text-xl text-primary">Осознанность</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Наши украшения созданы для того, чтобы заземлять, напоминать о важном и быть оберегом.</p>
+</div>
+</div>
+</section>
+<!-- События и Жизнь -->
+<section class="py-32 bg-surface-container-highest">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="flex justify-between items-end mb-16">
+<h2 class="serif-display text-5xl text-primary">События и Жизнь</h2>
+<a class="font-label text-xs uppercase tracking-widest text-secondary hover:text-primary transition-colors border-b border-secondary/20 pb-1" href="#">Читать Журнал</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden mb-6">
+<img alt="Upcoming exhibition" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Atmospheric art gallery opening with soft lighting, abstract paintings in the background, people in elegant attire silhouettes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8wDpoopnzoO0k216B7HgR-FaBoCbpyVf7j9NpBnsL63SBurWPnlG2hHfpyX9nCmQgFBerkVbwdaIegxvTB7K3YiwuG9Wc3VjdifiethFhS3-tsIQntRG8SwWzA68EfK24OvDVHAPsy8wqo-DyvSE6SLwaU5TUr5aIihV1Lyaio9gd0-6_6x7dVf9CzR7KkYnOF5xyOvIqXpbmznVYuQq3c-lgVOs6EoZmDz8wUJQgNzZ1a8TlYy_TqIPsQkqSA3I69W57Dg5ZF5E"/>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 block mb-2">12 Октября — Маркет "Стиль"</span>
+<h4 class="serif-display text-2xl text-primary">Представляем новую осеннюю коллекцию "Шёпот Камня"</h4>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden mb-6">
+<img alt="Stone sourcing story" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Hand holding a rare blue sapphire against the sunlight, showing deep internal reflections and clarity, professional macro photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcvhLC3vq0aTyKn2Pdl_OsEN_ZMXocwXS4PIaXU98k8_Md-qBwbWy_vKYOY3QzZPdGI8N0NIGb6WOmLPw31e0c_rpwMZ5_mjVHfMUlvFYdO8qEV1_3gxzGnKmliqaTjXd0y6qSgJ8DBmkgjoNYK14CoPv2JX8YZPg1dvjmVtSJf3V9yl3iY1L80s54oQBPYjddQR-HozsCHFtA3e1c13pkN4r1kVZgk22yxkg_-BQBc2dnD0ZfZVbhF7enskvD5UjiOYB2Addbh4c"/>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 block mb-2">История поиска</span>
+<h4 class="serif-display text-2xl text-primary">Как мы искали идеальные изумруды в Замбии: Путевые заметки</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-48 bg-primary text-on-primary text-center">
+<div class="max-w-2xl mx-auto px-6">
+<h2 class="serif-display text-5xl md:text-7xl mb-12 leading-tight">Готовы найти <br/> свой артефакт?</h2>
+<button class="bg-surface text-primary px-12 py-6 font-label uppercase tracking-[0.3em] text-sm hover:bg-secondary-container transition-colors duration-500">
+                    Посмотреть коллекции
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-none pt-24 pb-12 mt-24 border-t border-emerald-900/5 bg-emerald-50 dark:bg-emerald-950 flat no-shadow">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="font-['Noto_Serif'] text-lg font-semibold text-emerald-950 dark:text-white">GloWStone</div>
+<p class="font-['Manrope'] text-xs tracking-wide leading-relaxed text-emerald-900/50 dark:text-emerald-100/50 uppercase">© 2024 GloWStone. <br/> Crafted for the intentional soul.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-['Manrope'] text-xs tracking-widest uppercase font-bold text-emerald-900 dark:text-emerald-100 mb-2">Shop</h5>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Rings</a>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Bracelets</a>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Earrings</a>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Necklaces</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-['Manrope'] text-xs tracking-widest uppercase font-bold text-emerald-900 dark:text-emerald-100 mb-2">Connect</h5>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Instagram</a>
+<a class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors duration-300" href="#">Telegram</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-['Manrope'] text-xs tracking-widest uppercase font-bold text-emerald-900 dark:text-emerald-100 mb-2">Concierge</h5>
+<p class="font-['Manrope'] text-xs tracking-wide text-emerald-900/50 dark:text-emerald-100/50">Пн — Пт: 10:00 — 20:00<br/>Москва, ул. Большая Никитская, 12</p>
+</div>
+</div>
+</footer>
+</body></html>

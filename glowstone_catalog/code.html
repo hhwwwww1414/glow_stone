@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f4",
+                        "on-primary-container": "#7dbaa9",
+                        "on-secondary-container": "#785a1a",
+                        "on-tertiary-fixed-variant": "#40484a",
+                        "inverse-on-surface": "#f3f0eb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary": "#252d2f",
+                        "surface-dim": "#dcdad5",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-bright": "#fcf9f4",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c0c8ca",
+                        "on-surface": "#1c1c19",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#a7afb2",
+                        "outline": "#707975",
+                        "tertiary-fixed": "#dce4e6",
+                        "on-secondary-fixed": "#261900",
+                        "secondary-container": "#fed488",
+                        "on-primary-fixed": "#00201a",
+                        "inverse-primary": "#95d3c1",
+                        "secondary": "#775a19",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#0a5043",
+                        "outline-variant": "#bfc9c4",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#31302d",
+                        "on-background": "#1c1c19",
+                        "surface-container-high": "#ebe8e3",
+                        "primary-fixed-dim": "#95d3c1",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface-container-low": "#f6f3ee",
+                        "on-tertiary-fixed": "#151d1f",
+                        "surface-tint": "#2b695a",
+                        "primary": "#003229",
+                        "surface-container-highest": "#e5e2dd",
+                        "secondary-fixed-dim": "#e9c176",
+                        "primary-fixed": "#b0efdd",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3b4345",
+                        "on-surface-variant": "#404945",
+                        "primary-container": "#004b3e",
+                        "surface-container": "#f0ede8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fcf9f4; color: #1c1c19; }
+        .serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #fcf9f4; }
+        ::-webkit-scrollbar-thumb { background: #bfc9c4; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-[0_4px_40px_rgba(28,28,25,0.04)] no-border transition-colors duration-500">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-['Noto_Serif'] font-bold tracking-[0.2em] text-emerald-950 dark:text-emerald-50">GloWStone</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-950 dark:text-white border-b border-emerald-900/20 pb-1 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Catalog</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Collections</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Stones</a>
+<a class="font-['Noto_Serif'] tracking-tight text-sm uppercase font-light text-emerald-900/60 dark:text-emerald-100/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-6 text-emerald-900 dark:text-emerald-50">
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-700 transition-colors">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-700 transition-colors">favorite</span>
+<div class="relative cursor-pointer hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[8px] text-white">2</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Breadcrumbs -->
+<nav class="mb-12">
+<ol class="flex items-center space-x-4 text-xs tracking-widest uppercase text-on-surface/40">
+<li><a class="hover:text-on-surface transition-colors" href="#">Главная</a></li>
+<li><span class="material-symbols-outlined text-[10px]">chevron_right</span></li>
+<li class="text-on-surface">Каталог</li>
+</ol>
+</nav>
+<!-- Header Section -->
+<header class="mb-20 max-w-3xl">
+<h1 class="serif text-5xl md:text-7xl font-light tracking-tight mb-8 text-primary">Каталог украшений</h1>
+<p class="text-body text-lg leading-relaxed text-on-surface/70">
+                Каждое изделие GloWStone — это диалог между необузданной силой природы и мастерством ювелирного искусства. Наши кураторы отбирают редчайшие минералы, чтобы создать для вас украшения, несущие в себе историю веков и энергию земли.
+            </p>
+</header>
+<div class="flex flex-col md:flex-row gap-16">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-1/4 space-y-12">
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-primary">Категории</h3>
+<ul class="space-y-4">
+<li><button class="text-sm tracking-wide text-on-surface/60 hover:text-primary transition-colors flex justify-between w-full">Серьги <span>(124)</span></button></li>
+<li><button class="text-sm tracking-wide text-on-surface font-bold flex justify-between w-full">Браслеты <span>(86)</span></button></li>
+<li><button class="text-sm tracking-wide text-on-surface/60 hover:text-primary transition-colors flex justify-between w-full">Колье <span>(42)</span></button></li>
+<li><button class="text-sm tracking-wide text-on-surface/60 hover:text-primary transition-colors flex justify-between w-full">Кольца <span>(115)</span></button></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-primary">Камни</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 text-xs uppercase tracking-widest bg-primary text-white">Малахит</button>
+<button class="px-4 py-2 text-xs uppercase tracking-widest bg-surface-container-high text-on-surface/70 hover:bg-surface-variant transition-colors">Жемчуг</button>
+<button class="px-4 py-2 text-xs uppercase tracking-widest bg-surface-container-high text-on-surface/70 hover:bg-surface-variant transition-colors">Серафинит</button>
+<button class="px-4 py-2 text-xs uppercase tracking-widest bg-surface-container-high text-on-surface/70 hover:bg-surface-variant transition-colors">Цитрин</button>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-primary">Материалы</h3>
+<div class="space-y-3">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<div class="w-4 h-4 border border-outline-variant/30 group-hover:border-primary transition-colors"></div>
+<span class="text-sm text-on-surface/70 group-hover:text-on-surface transition-colors">Позолота 18K</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<div class="w-4 h-4 border border-outline-variant/30 group-hover:border-primary transition-colors"></div>
+<span class="text-sm text-on-surface/70 group-hover:text-on-surface transition-colors">Эко-смола</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-primary">Цена</h3>
+<div class="px-2">
+<div class="h-0.5 bg-surface-variant w-full relative mb-4">
+<div class="absolute inset-0 bg-primary w-2/3 left-10"></div>
+<div class="absolute w-3 h-3 bg-primary top-1/2 -translate-y-1/2 left-10"></div>
+<div class="absolute w-3 h-3 bg-primary top-1/2 -translate-y-1/2 left-[76%]"></div>
+</div>
+<div class="flex justify-between text-[10px] tracking-widest uppercase text-on-surface/50">
+<span>5 000 ₽</span>
+<span>150 000 ₽</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-primary">Наличие</h3>
+<div class="flex items-center space-x-3">
+<div class="w-10 h-5 bg-primary relative px-1 flex items-center">
+<div class="w-3 h-3 bg-white ml-auto"></div>
+</div>
+<span class="text-sm text-on-surface/70">В наличии</span>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="w-full md:w-3/4">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<p class="text-xs tracking-widest uppercase text-on-surface/50">Найдено 328 украшений</p>
+<div class="relative group min-w-[200px]">
+<button class="flex items-center justify-between w-full border-b border-outline-variant/20 py-2 text-xs tracking-widest uppercase">
+                            Сначала новые
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Bento-ish Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<article class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a handcrafted emerald green malachite pendant set in textured gold jewelry piece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL0r2ogzOPqNBcozXbG8qXWI5Jn3H8v5BoA_Jjffcy_rX3UCkhhgtvXc40rZeM3ZRcMJo_5OJaNygKXYXoAbN4FvX25pxjOFJ2zJ4TSp2QcLNCKPwRkvhW-zid7T5SxrlIum5NOb2GlwiYH5Tj2_7GWrH_fIkeHmaI2gAScc5DWuQme-ByQebC2ldWcMgMK4w0f07EA7kxClHBuYEltvlUWbBnHzANX_Oyjxez9Im_otI4ouI177t7y40WhVUrIXrosQiX8YKhyvk"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="px-8 py-4 bg-primary text-white text-xs uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Быстрый просмотр
+                                </button>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Малахит • Позолота</span>
+<h3 class="serif text-xl font-light text-primary group-hover:text-secondary transition-colors">Серьги «Лесной Шёпот»</h3>
+<p class="text-sm font-medium text-on-surface/80">24 500 ₽</p>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist gold necklace with a large iridescent pearl against a soft neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_blSVRNz8Gg5Trg0GB3-TrHNPrYJvOk6GEUwqOQXlXwYenBLkjjCnYn8DCgb5xb2NRLHtEJU0km1VVVz8Gwj9fnN_dgQ3pVnrp8cpFLOjImM-NDisZXaKJbfIye2l1ZdGLvwwn0V2Sj7TWr0-2mXMz12keV8ishSu6PDttQi7WzcXeywMS9RKHizS6sGKhAnFqXrtPVn1ZHr3s2S_DcuYl5jKO6EHZvj_D7qgcbPY7h2ixx7LAXqJnVjzMyN8TJUPlFchIzcM3g"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="px-8 py-4 bg-primary text-white text-xs uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Быстрый просмотр
+                                </button>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Жемчуг Барокко</span>
+<h3 class="serif text-xl font-light text-primary group-hover:text-secondary transition-colors">Колье «Морская Пена»</h3>
+<p class="text-sm font-medium text-on-surface/80">32 000 ₽</p>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Unique dark stone ring with silver filigree texture and ethereal lighting creating dramatic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDkdlj1dJUrmT6OolTN0JBkLqfSxY-IeVbO0DCJ1wHSkORz1BUNFWeYU1NogsSwzFOZ_XpbK_ekh2p_Et26IHCd-_-caf0lUORXDpOfGUJbAg4oJf95QHSYn5xdeXaUjJdkpQguCt9OPaBBL1ApVnW_HZ2esY-d9rjZNDlYWkKUYaCHeSzNfH1KFhwS64__7tpyzTSQArL5I2zKMmPhMp3WfjuLshx5LgwgomRZoxjRg4SNLTtp8xkrDcluXf3WufMOwFAR8GHIWA"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="px-8 py-4 bg-primary text-white text-xs uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Быстрый просмотр
+                                </button>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Серафинит • Серебро</span>
+<h3 class="serif text-xl font-light text-primary group-hover:text-secondary transition-colors">Перстень «Дыхание Гор»</h3>
+<p class="text-sm font-medium text-on-surface/80">18 900 ₽</p>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro detail of organic shaped jewelry made with clear eco-resin and embedded gold flakes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyr42dDl2D9wq4gnnaLd8u1rst3_A22Grk2tjc6i5OpoQKbPPDEoua1630qfjnKPJhFQ5w2XiLsddxmoVyme-lTR32DQ2TySGH-ahKMH_ITBN6yAoLUfWDSM1hE2gWrbRVM54RAyZXnC4Vb1IGNvdPUSM5KjF8F_65S6uB7frFop1MlPCiPEaryCERdRgXNgT5LLKaH9u0_ocE-xegmvaaN37pILaMM4JD4SXL7vFWtAJ2dadX48WrmHJk8XgPRGqhWtgT3sewgSU"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="px-8 py-4 bg-primary text-white text-xs uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Быстрый просмотр
+                                </button>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Эко-смола • Золото</span>
+<h3 class="serif text-xl font-light text-primary group-hover:text-secondary transition-colors">Браслет «Застывшее Время»</h3>
+<p class="text-sm font-medium text-on-surface/80">15 500 ₽</p>
+</div>
+</article>
+<!-- Featured Card - Spanning 2 columns on large screens -->
+<article class="group lg:col-span-2">
+<div class="relative aspect-[16/9] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Artistic composition of luxury jewelry pieces laid out on raw marble stone with soft artistic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaz2xPduHXUMZ9R3kP_-KW9ghzzybQjonG2RqmQ7yqgxvDrXLSdoRtsjytufk0S-HIS5yLrcxTyYYANBI5alRrHc60o_TdgFgyozjqHbd0Khy-RLanyk06ar8MlxYBMrPqmyGh-7wcUN6J3imAIm6JPkdVVjLPKYMsa2ds5pn4HzhFcZIGsQ7LhpjpWB0fhxk2abD6bmBVBoLKvdh8IpIQNFVn-lHQ9k6JYnfwZurH2yiSuDD2p_uv9erxglpCjx3P_FazlA400DQ"/>
+<div class="absolute top-8 left-8 bg-white/90 backdrop-blur-md px-6 py-4">
+<span class="text-[10px] uppercase tracking-[0.4em] text-primary">Коллекция</span>
+<h2 class="serif text-2xl mt-1">Stones of Power</h2>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Limited Edition</span>
+<h3 class="serif text-xl font-light text-primary group-hover:text-secondary transition-colors">Набор украшений «Триединство Земли»</h3>
+<p class="text-sm font-medium text-on-surface/80">84 000 ₽</p>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex items-center justify-center space-x-12">
+<button class="material-symbols-outlined text-on-surface/30 hover:text-primary transition-colors">west</button>
+<div class="flex space-x-8 text-xs tracking-[0.3em] uppercase">
+<span class="text-primary font-bold">01</span>
+<a class="text-on-surface/30 hover:text-primary transition-colors" href="#">02</a>
+<a class="text-on-surface/30 hover:text-primary transition-colors" href="#">03</a>
+<a class="text-on-surface/30 hover:text-primary transition-colors" href="#">04</a>
+</div>
+<button class="material-symbols-outlined text-on-surface/30 hover:text-primary transition-colors">east</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-none bg-emerald-50 dark:bg-emerald-950 pt-24 pb-12 mt-24 border-t border-emerald-900/5">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="font-['Noto_Serif'] text-lg font-semibold text-emerald-950 dark:text-white uppercase tracking-[0.2em]">GloWStone</div>
+<p class="font-['Manrope'] text-xs tracking-wide leading-relaxed text-emerald-900/50 dark:text-emerald-100/50">
+                    © 2024 GloWStone. Crafted for the intentional soul.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-emerald-900 dark:text-emerald-100">Products</h4>
+<ul class="space-y-3 font-['Manrope'] text-xs tracking-wide">
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Rings</a></li>
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Bracelets</a></li>
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Earrings</a></li>
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Necklaces</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-emerald-900 dark:text-emerald-100">Social</h4>
+<ul class="space-y-3 font-['Manrope'] text-xs tracking-wide">
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Instagram</a></li>
+<li><a class="text-emerald-900/50 dark:text-emerald-100/50 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Telegram</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-emerald-900 dark:text-emerald-100">Newsletter</h4>
+<div class="flex border-b border-emerald-900/20 py-2">
+<input class="bg-transparent border-none focus:ring-0 text-xs w-full placeholder:text-emerald-900/30" placeholder="YOUR EMAIL" type="email"/>
+<button class="material-symbols-outlined text-emerald-900/50 hover:text-emerald-900">arrow_forward</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
