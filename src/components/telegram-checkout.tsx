@@ -36,7 +36,7 @@ export function TelegramCheckout({ items }: { items: CartItem[] }) {
 
   return (
     <div className="mt-8">
-      <Button className="w-full bg-white text-primary hover:bg-surface-container" onClick={checkout}>
+      <Button className="w-full" onClick={checkout} variant="light">
         <Send size={16} strokeWidth={1.8} />
         {loading ? "Готовим ссылку" : "Оформить в Telegram"}
       </Button>

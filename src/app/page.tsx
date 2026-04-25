@@ -9,8 +9,8 @@ const heroImage =
 const processSteps = [
   {
     label: "01",
-    title: "Найдено в земле",
-    text: "Мы выбираем камни с выразительным природным рисунком и прозрачной историей."
+    title: "Отобрано куратором",
+    text: "Мы работаем с готовыми камнями и проверенными поставщиками, выбирая выразительный природный рисунок и прозрачную историю происхождения."
   },
   {
     label: "02",
@@ -48,14 +48,10 @@ export default function Home() {
               Украшения с характером, фактурой и историей.
             </h1>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <ButtonLink href="/catalog" variant="secondary" className="bg-white text-primary">
+              <ButtonLink href="/catalog" variant="light">
                 В каталог
               </ButtonLink>
-              <ButtonLink
-                href="/about"
-                variant="ghost"
-                className="!text-white hover:!text-secondary-container"
-              >
+              <ButtonLink href="/about" variant="inverseGhost">
                 О бренде
               </ButtonLink>
             </div>
@@ -78,7 +74,7 @@ export default function Home() {
             Философия GloWStone
           </p>
           <h2 className="mt-6 font-serif text-5xl leading-tight text-primary">
-            Мы ищем не идеальную симметрию, а голос материала.
+            Мы ценим не идеальную симметрию, а голос материала.
           </h2>
           <p className="mt-8 max-w-xl text-lg leading-8 text-on-surface/65">
             Каждое изделие строится вокруг камня: его прожилок, трещин,
@@ -91,7 +87,7 @@ export default function Home() {
       <section className="bg-surface-container-low py-28">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12">
           <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <h2 className="font-serif text-5xl text-primary">Материалы Земли</h2>
+            <h2 className="font-serif text-5xl text-primary">Камни и металл</h2>
             <ButtonLink href="/catalog" variant="ghost">
               Смотреть все
             </ButtonLink>

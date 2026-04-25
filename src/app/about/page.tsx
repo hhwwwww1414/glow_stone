@@ -69,13 +69,14 @@ export default function AboutPage() {
           <div className="self-center">
             <h2 className="font-serif text-5xl text-primary">За брендом</h2>
             <p className="mt-8 text-lg leading-8 text-on-surface/65">
-              Всё началось с необработанного кристалла кварца, найденного в
-              горах Алтая. Эта встреча изменила восприятие формы: материал стал
-              не сырьем, а собеседником.
+              Всё началось с необработанного кристалла кварца из частной
+              коллекции поставщика. Эта встреча изменила восприятие формы:
+              материал стал не сырьем, а собеседником.
             </p>
             <p className="mt-6 text-lg leading-8 text-on-surface/65">
-              Каждое изделие проходит через руки мастера — от подбора камня до
-              финальной полировки, сохраняющей природную душу материала.
+              Каждое изделие проходит через руки мастера — от кураторского
+              выбора камня у поставщика до финальной полировки, сохраняющей
+              природную душу материала.
             </p>
           </div>
         </div>
@@ -103,8 +104,8 @@ export default function AboutPage() {
                 Честность материалов
               </h3>
               <p className="mt-5 leading-8 text-on-surface/65">
-                Переработанные металлы, природные камни и открытая история
-                происхождения — основа нашей роскоши.
+                Переработанные металлы и природные камни от проверенных
+                поставщиков — основа нашей роскоши.
               </p>
             </article>
           </div>
@@ -152,7 +153,7 @@ export default function AboutPage() {
           <article>
             <div className="aspect-[16/10] bg-secondary/10" />
             <h3 className="mt-5 font-serif text-2xl text-primary">
-              Как мы искали идеальные минералы в Забайкалье
+              Как мы выбираем минералы у проверенных поставщиков
             </h3>
           </article>
         </div>
@@ -162,7 +163,7 @@ export default function AboutPage() {
         <h2 className="mx-auto max-w-2xl font-serif text-5xl leading-tight">
           Готовы найти свой артефакт?
         </h2>
-        <ButtonLink className="mt-8 bg-white text-primary" href="/catalog" variant="secondary">
+        <ButtonLink className="mt-8" href="/catalog" variant="light">
           Посмотреть коллекцию
         </ButtonLink>
       </section>
