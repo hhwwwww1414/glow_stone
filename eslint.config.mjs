@@ -7,6 +7,7 @@ const eslintConfig = [
       ".next/**",
       "out/**",
       "build/**",
+      "reference/**",
       "next-env.d.ts",
       "eslint.config.mjs"
     ]

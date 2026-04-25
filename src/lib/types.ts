@@ -23,10 +23,21 @@ export type ProductMood =
   | "ritual"
   | "celebration";
 
+export type ProductCollectionSlug =
+  | "one-of-a-kind"
+  | "stones-of-power"
+  | "pearl-silence"
+  | "mountain-line"
+  | "resin-archives"
+  | "garden-relics"
+  | "daily-relics"
+  | "night-minerals";
+
 export type Product = {
   slug: string;
   name: string;
   collection: string;
+  collectionSlug: ProductCollectionSlug;
   category: ProductCategory;
   stones: ProductStone[];
   materials: ProductMaterial[];
@@ -59,8 +70,10 @@ export type PriceFilter = {
 
 export type CatalogFilters = {
   categories: ProductCategory[];
+  collections: ProductCollectionSlug[];
   stones: ProductStone[];
   materials: ProductMaterial[];
+  moods: ProductMood[];
   availableOnly: boolean;
   price: PriceFilter;
 };

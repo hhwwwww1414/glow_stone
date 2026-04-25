@@ -24,6 +24,14 @@ const processSteps = [
   }
 ];
 
+const moodLinks = [
+  { label: "Защита", href: "/catalog?mood=protection" },
+  { label: "Ясность", href: "/catalog?mood=clarity" },
+  { label: "Заземление", href: "/catalog?mood=grounding" },
+  { label: "Ритуал", href: "/catalog?mood=ritual" },
+  { label: "Праздник", href: "/catalog?mood=celebration" }
+];
+
 export default function Home() {
   const featuredProducts = products.slice(0, 3);
 
@@ -125,13 +133,11 @@ export default function Home() {
           Найдите украшение, которое совпадает с вашим ритуалом.
         </h2>
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {["Защита", "Ясность", "Заземление", "Ритуал", "Праздник"].map(
-            (mood) => (
-              <ButtonLink href="/catalog" key={mood} variant="secondary">
-                {mood}
-              </ButtonLink>
-            )
-          )}
+          {moodLinks.map((mood) => (
+            <ButtonLink href={mood.href} key={mood.href} variant="secondary">
+              {mood.label}
+            </ButtonLink>
+          ))}
         </div>
       </section>
     </main>

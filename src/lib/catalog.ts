@@ -9,13 +9,25 @@ export function filterProducts(products: Product[], filters: CatalogFilters) {
     const inCategory =
       filters.categories.length === 0 ||
       filters.categories.includes(product.category);
+    const inCollection =
+      filters.collections.length === 0 ||
+      filters.collections.includes(product.collectionSlug);
     const hasStone = hasAny(filters.stones, product.stones);
     const hasMaterial = hasAny(filters.materials, product.materials);
+    const hasMood = hasAny(filters.moods, product.moods);
     const inAvailability = !filters.availableOnly || product.available;
     const inPrice =
       product.price >= filters.price.min && product.price <= filters.price.max;
 
-    return inCategory && hasStone && hasMaterial && inAvailability && inPrice;
+    return (
+      inCategory &&
+      inCollection &&
+      hasStone &&
+      hasMaterial &&
+      hasMood &&
+      inAvailability &&
+      inPrice
+    );
   });
 }
 
@@ -43,8 +55,10 @@ export function sortProducts(products: Product[], sort: CatalogSort) {
 
 export const defaultFilters: CatalogFilters = {
   categories: [],
+  collections: [],
   stones: [],
   materials: [],
+  moods: [],
   availableOnly: false,
   price: { min: 0, max: 200000 }
 };

@@ -7,13 +7,23 @@ import { formatPrice } from "@/lib/format";
 import type { Product } from "@/lib/types";
 import { useCart } from "./cart-provider";
 
+const stoneLabels: Record<Product["stones"][number], string> = {
+  malachite: "Малахит",
+  pearl: "Жемчуг",
+  seraphinite: "Серфинит",
+  citrine: "Цитрин",
+  garnet: "Гранат",
+  amethyst: "Аметист",
+  quartz: "Кварц"
+};
+
 export function ProductCard({ product }: { product: Product }) {
   const { isFavorite, toggleFavorite } = useCart();
   const favorite = isFavorite(product.slug);
 
   return (
     <article className="group">
-      <div className="relative aspect-[4/5] overflow-hidden bg-surface-container-lowest">
+      <div className="relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
         <Link className="relative block h-full w-full" href={`/product/${product.slug}`}>
           <Image
             alt={product.alt}
@@ -33,17 +43,27 @@ export function ProductCard({ product }: { product: Product }) {
         >
           <Heart fill={favorite ? "currentColor" : "none"} size={18} strokeWidth={1.7} />
         </button>
-        {!product.available ? (
-          <span className="absolute left-4 top-4 bg-on-surface px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white">
-            На заказ
-          </span>
-        ) : null}
+        <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-2">
+          {product.isNew ? (
+            <span className="bg-primary px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-white">
+              Новинка
+            </span>
+          ) : null}
+          {!product.available ? (
+            <span className="bg-on-surface px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-white">
+              На заказ
+            </span>
+          ) : null}
+        </div>
+        <span className="absolute bottom-3 left-3 max-w-[calc(100%-1.5rem)] bg-primary/75 px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur">
+          {product.collection}
+        </span>
       </div>
       <div className="pt-6">
         <p className="text-[10px] uppercase tracking-[0.24em] text-secondary">
-          {product.collection}
+          {product.stones.map((stone) => stoneLabels[stone]).join(" · ")}
         </p>
-        <h2 className="mt-3 font-serif text-2xl leading-tight text-primary">
+        <h2 className="mt-3 font-serif text-base leading-tight text-primary md:text-2xl">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h2>
         <p className="mt-3 text-sm text-on-surface/70">{formatPrice(product.price)}</p>
