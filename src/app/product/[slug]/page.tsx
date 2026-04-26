@@ -61,7 +61,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {formatPrice(product.price)}
               </span>
               <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-secondary">
-                {product.available ? "В наличии" : "На заказ"}
+                {product.available ? "Можно обсудить" : "Архив мастерской"}
               </span>
             </div>
             <div className="mt-10">
@@ -83,6 +83,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </h2>
                 <p className="mt-3 text-sm italic leading-7 text-on-surface/70">
                   {product.meaning}
+                </p>
+              </div>
+              <div>
+                <h2 className="font-serif text-lg italic text-secondary">
+                  Разговор с мастерской
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-on-surface/70">
+                  Мы уточним наличие, посадку, упаковку и возможность собрать похожее
+                  изделие, если этот камень уже ушел в архив.
                 </p>
               </div>
             </section>

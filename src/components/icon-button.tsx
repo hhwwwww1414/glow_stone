@@ -24,7 +24,7 @@ export function IconButton({
   return (
     <button
       aria-label={label}
-      className={`relative inline-flex h-10 w-10 items-center justify-center text-primary transition duration-300 hover:text-secondary ${className}`}
+      className={`relative inline-flex h-11 w-11 items-center justify-center text-primary transition-colors duration-300 hover:text-secondary active:text-secondary ${className}`}
       type="button"
       {...props}
     >

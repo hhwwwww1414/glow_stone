@@ -5,11 +5,22 @@ import { Send } from "lucide-react";
 import type { CartItem } from "@/lib/types";
 import { Button } from "./button";
 
-export function TelegramCheckout({ items }: { items: CartItem[] }) {
+export function TelegramCheckout({
+  disabledReason,
+  items
+}: {
+  disabledReason?: string;
+  items: CartItem[];
+}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   async function checkout() {
+    if (disabledReason) {
+      setError(disabledReason);
+      return;
+    }
+
     setLoading(true);
     setError("");
 
@@ -36,11 +47,25 @@ export function TelegramCheckout({ items }: { items: CartItem[] }) {
 
   return (
     <div className="mt-8">
-      <Button className="w-full" onClick={checkout} variant="light">
-        <Send size={16} strokeWidth={1.8} />
-        {loading ? "Готовим ссылку" : "Оформить в Telegram"}
+      <Button
+        className="w-full"
+        disabled={Boolean(disabledReason) || loading}
+        onClick={checkout}
+        variant="light"
+      >
+        <Send aria-hidden="true" size={16} strokeWidth={1.8} />
+        {loading ? "Готовим разговор" : "Написать мастеру в Telegram"}
       </Button>
-      {error ? <p className="mt-4 text-sm text-secondary-container">{error}</p> : null}
+      {disabledReason ? (
+        <p className="mt-4 text-sm text-secondary-container" aria-live="polite">
+          {disabledReason}
+        </p>
+      ) : null}
+      {error ? (
+        <p className="mt-4 text-sm text-secondary-container" aria-live="polite">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

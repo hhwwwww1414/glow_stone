@@ -13,6 +13,14 @@ export function ProductActions({ product }: { product: Product }) {
   const favorite = isFavorite(product.slug);
 
   async function openTelegramOrder() {
+    if (!product.available) {
+      const text = encodeURIComponent(
+        `Здравствуйте. Хочу обсудить похожее изделие на ${product.name}.`
+      );
+      window.location.href = `https://t.me/glowstone_shop?text=${text}`;
+      return;
+    }
+
     setLoadingTelegram(true);
     setMessage("");
 
@@ -41,22 +49,26 @@ export function ProductActions({ product }: { product: Product }) {
     <div className="space-y-4">
       <Button
         className="w-full"
-        disabled={!product.available}
-        onClick={() => {
-          addToCart(product.slug);
-          setMessage("Украшение добавлено в корзину");
-        }}
+        onClick={openTelegramOrder}
+        disabled={loadingTelegram}
       >
-        В корзину
+        <Send aria-hidden="true" size={16} strokeWidth={1.8} />
+        {loadingTelegram
+          ? "Готовим разговор"
+          : product.available
+            ? "Написать мастеру"
+            : "Обсудить похожее"}
       </Button>
       <Button
         className="w-full"
-        onClick={openTelegramOrder}
+        onClick={() => {
+          addToCart(product.slug);
+          setMessage("Изделие отложено в подбор");
+        }}
         variant="secondary"
-        disabled={loadingTelegram || !product.available}
+        disabled={!product.available}
       >
-        <Send size={16} strokeWidth={1.8} />
-        {loadingTelegram ? "Готовим ссылку" : "Заказать в Telegram"}
+        Отложить в подбор
       </Button>
       <Button
         className="w-full"
@@ -64,13 +76,17 @@ export function ProductActions({ product }: { product: Product }) {
         variant="ghost"
       >
         {favorite ? (
-          <HeartMinus size={16} strokeWidth={1.8} />
+          <HeartMinus aria-hidden="true" size={16} strokeWidth={1.8} />
         ) : (
-          <Heart size={16} strokeWidth={1.8} />
+          <Heart aria-hidden="true" size={16} strokeWidth={1.8} />
         )}
-        {favorite ? "Убрать из избранного" : "В избранное"}
+        {favorite ? "Убрать из кабинета" : "Сохранить в кабинет"}
       </Button>
-      {message ? <p className="text-sm text-secondary">{message}</p> : null}
+      {message ? (
+        <p className="text-sm text-secondary" aria-live="polite">
+          {message}
+        </p>
+      ) : null}
     </div>
   );
 }

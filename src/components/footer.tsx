@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FormEvent, useState } from "react";
 
 const productLinks = [
   { href: "/catalog?category=rings", label: "Кольца" },
@@ -9,8 +12,23 @@ const productLinks = [
 ];
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (!email.trim() || !email.includes("@")) {
+      setMessage("Укажите email, чтобы мастерская могла ответить.");
+      return;
+    }
+
+    setMessage("Спасибо. Мы напишем, когда появится новый камень.");
+    setEmail("");
+  }
+
   return (
-    <footer className="mt-24 bg-[#e7fbf3]">
+    <footer className="mt-24 bg-footer-surface">
       <div className="mx-auto grid max-w-screen-2xl gap-12 px-6 py-16 md:grid-cols-4 md:px-12 md:py-24">
         <div>
           <Link
@@ -20,8 +38,8 @@ export function Footer() {
             GloWStone
           </Link>
           <p className="mt-8 max-w-xs text-sm leading-7 text-primary/55">
-            Украшения для осознанного выбора: камни, металл и ручная работа без
-            спешки.
+            Камни, металл и ручная работа без спешки: маленький архив предметов
+            для спокойного разговора.
           </p>
         </div>
         <div>
@@ -59,20 +77,39 @@ export function Footer() {
           <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
             Письма
           </h2>
-          <form className="mt-8 flex items-center border-b border-primary/20 pb-3">
+          <form
+            className="mt-8 border-b border-primary/20 pb-3 focus-within:border-secondary"
+            onSubmit={handleSubmit}
+          >
             <label className="sr-only" htmlFor="newsletter-email">
               Email
             </label>
-            <input
-              className="w-full bg-transparent text-sm uppercase tracking-[0.18em] text-primary outline-none placeholder:text-primary/35"
-              id="newsletter-email"
-              placeholder="Ваш email"
-              type="email"
-            />
-            <button aria-label="Подписаться" className="text-primary" type="button">
-              <ArrowRight size={20} strokeWidth={1.8} />
-            </button>
+            <div className="flex items-center">
+              <input
+                autoComplete="email"
+                className="w-full bg-transparent text-sm uppercase tracking-[0.18em] text-primary placeholder:text-primary/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                id="newsletter-email"
+                name="email"
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="Ваш email…"
+                spellCheck={false}
+                type="email"
+                value={email}
+              />
+              <button
+                aria-label="Подписаться"
+                className="inline-flex h-11 w-11 items-center justify-center text-primary transition-colors hover:text-secondary"
+                type="submit"
+              >
+                <ArrowRight aria-hidden="true" size={20} strokeWidth={1.8} />
+              </button>
+            </div>
           </form>
+          {message ? (
+            <p className="mt-4 text-sm leading-6 text-primary/60" aria-live="polite">
+              {message}
+            </p>
+          ) : null}
         </div>
       </div>
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-4 px-6 pb-8 text-xs text-primary/45 md:flex-row md:items-center md:justify-between md:px-12">

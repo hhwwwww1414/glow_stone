@@ -14,7 +14,7 @@ export function ProductGallery({ product }: { product: Product }) {
           alt={product.alt}
           className="h-full w-full object-cover transition duration-700 hover:scale-105"
           fill
-          loading="eager"
+          priority
           sizes="(min-width: 1024px) 58vw, 100vw"
           src={activeImage}
         />
@@ -28,6 +28,7 @@ export function ProductGallery({ product }: { product: Product }) {
         {product.gallery.map((image, index) => (
           <button
             aria-label={`Показать изображение ${index + 1}`}
+            aria-pressed={activeImage === image}
             className={`relative aspect-square overflow-hidden bg-surface-container-high transition ${
               activeImage === image ? "opacity-100 ring-1 ring-primary" : "opacity-60"
             }`}
@@ -39,7 +40,7 @@ export function ProductGallery({ product }: { product: Product }) {
               alt=""
               className="h-full w-full object-cover"
               fill
-              loading="eager"
+              loading="lazy"
               sizes="25vw"
               src={image}
             />

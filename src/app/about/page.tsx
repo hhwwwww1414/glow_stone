@@ -36,12 +36,12 @@ export default function AboutPage() {
               The Digital Curator
             </p>
             <h1 className="font-serif text-6xl leading-[0.9] text-primary md:text-9xl">
-              Искусство вне времени
+              Мастерская внимательного выбора
             </h1>
           </div>
           <p className="self-end text-lg leading-8 text-on-surface-variant md:col-span-5">
-            GloWStone — это материальное воплощение тишины, природы и
-            осознанного выбора.
+            GloWStone собирает украшения вокруг характера камня: его света,
+            неровности, веса и тихого присутствия рядом с телом.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </blockquote>
           </div>
           <div className="self-center">
-            <h2 className="font-serif text-5xl text-primary">За брендом</h2>
+            <h2 className="font-serif text-5xl text-primary">За мастерской</h2>
             <p className="mt-8 text-lg leading-8 text-on-surface/65">
               Всё началось с необработанного кристалла кварца из частной
               коллекции поставщика. Эта встреча изменила восприятие формы:
@@ -78,6 +78,9 @@ export default function AboutPage() {
               выбора камня у поставщика до финальной полировки, сохраняющей
               природную душу материала.
             </p>
+            <ButtonLink className="mt-10" href="/catalog" variant="ghost">
+              Рассмотреть изделия
+            </ButtonLink>
           </div>
         </div>
       </section>
@@ -96,7 +99,7 @@ export default function AboutPage() {
               </h3>
               <p className="mt-5 leading-8 text-on-surface/65">
                 Мы создаем по одной вещи за раз, позволяя камню задавать ритм
-                будущего украшения.
+                будущего украшения и оставаться видимым в готовой форме.
               </p>
             </article>
             <article>
@@ -105,7 +108,7 @@ export default function AboutPage() {
               </h3>
               <p className="mt-5 leading-8 text-on-surface/65">
                 Переработанные металлы и природные камни от проверенных
-                поставщиков — основа нашей роскоши.
+                поставщиков — не украшение легенды, а условие работы.
               </p>
             </article>
           </div>
@@ -161,10 +164,10 @@ export default function AboutPage() {
 
       <section className="bg-primary px-6 py-24 text-center text-white">
         <h2 className="mx-auto max-w-2xl font-serif text-5xl leading-tight">
-          Готовы найти свой артефакт?
+          Хотите обсудить камень или похожее изделие?
         </h2>
         <ButtonLink className="mt-8" href="/catalog" variant="light">
-          Посмотреть коллекцию
+          Перейти в кабинет изделий
         </ButtonLink>
       </section>
     </main>

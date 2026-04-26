@@ -19,11 +19,11 @@ const notoSerif = Noto_Serif({
 
 export const metadata: Metadata = {
   title: {
-    default: "GloWStone — украшения с характером",
+    default: "GloWStone — кабинет камня и ручной работы",
     template: "%s | GloWStone"
   },
   description:
-    "Кураторский бренд украшений из природных камней, переработанного золота и серебра."
+    "Авторская мастерская украшений из природных камней, переработанного золота и серебра."
 };
 
 export default function RootLayout({
@@ -39,8 +39,11 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <CartProvider>
+          <a className="skip-link" href="#main-content">
+            К содержанию
+          </a>
           <Header />
-          {children}
+          <div id="main-content">{children}</div>
           <Footer />
         </CartProvider>
       </body>

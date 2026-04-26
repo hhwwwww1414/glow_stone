@@ -1,11 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "./cart-provider";
 import { IconButton } from "./icon-button";
+
+const FavoritesDialog = dynamic(
+  () => import("./favorites-dialog").then((module) => module.FavoritesDialog),
+  { ssr: false }
+);
+const SearchDialog = dynamic(
+  () => import("./search-dialog").then((module) => module.SearchDialog),
+  { ssr: false }
+);
 
 const navItems = [
   { href: "/catalog", label: "Каталог" },
@@ -19,9 +29,11 @@ export function Header() {
   const pathname = usePathname();
   const { cartCount, favoriteCount } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [favoritesOpen, setFavoritesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white/80 shadow-[0_4px_40px_rgba(28,28,25,0.04)] backdrop-blur-xl">
+    <header className="fixed top-0 z-50 w-full bg-[var(--glass-surface)] shadow-[0_4px_40px_rgba(28,28,25,0.04)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-5 py-4 md:px-12 md:py-6">
         <Link
           className="font-serif text-xl font-bold tracking-[0.22em] text-primary md:text-2xl"
@@ -54,10 +66,20 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1 md:gap-3">
-          <IconButton icon="search" label="Поиск" />
-          <IconButton badge={favoriteCount} icon="favorite" label="Избранное" />
-          <Link aria-label="Корзина" className="relative" href="/cart">
+          <IconButton icon="search" label="Поиск" onClick={() => setSearchOpen(true)} />
+          <IconButton
+            badge={favoriteCount}
+            icon="favorite"
+            label="Избранное отмечается в каталоге"
+            onClick={() => setFavoritesOpen(true)}
+          />
+          <Link
+            aria-label="Корзина"
+            className="relative inline-flex h-11 w-11 items-center justify-center"
+            href="/cart"
+          >
             <ShoppingBag
+              aria-hidden="true"
               className="text-primary transition duration-300 hover:text-secondary"
               size={22}
               strokeWidth={1.8}
@@ -75,7 +97,11 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             type="button"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? (
+              <X aria-hidden="true" size={22} />
+            ) : (
+              <Menu aria-hidden="true" size={22} />
+            )}
           </button>
         </div>
       </div>
@@ -95,6 +121,15 @@ export function Header() {
             ))}
           </div>
         </nav>
+      ) : null}
+      {searchOpen ? (
+        <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
+      ) : null}
+      {favoritesOpen ? (
+        <FavoritesDialog
+          open={favoritesOpen}
+          onClose={() => setFavoritesOpen(false)}
+        />
       ) : null}
     </header>
   );

@@ -29,7 +29,7 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.alt}
             className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
             fill
-            loading="eager"
+            loading="lazy"
             sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
             src={product.image}
           />
@@ -41,7 +41,12 @@ export function ProductCard({ product }: { product: Product }) {
           onClick={() => toggleFavorite(product.slug)}
           type="button"
         >
-          <Heart fill={favorite ? "currentColor" : "none"} size={18} strokeWidth={1.7} />
+          <Heart
+            aria-hidden="true"
+            fill={favorite ? "currentColor" : "none"}
+            size={18}
+            strokeWidth={1.7}
+          />
         </button>
         <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-2">
           {product.isNew ? (
@@ -51,7 +56,7 @@ export function ProductCard({ product }: { product: Product }) {
           ) : null}
           {!product.available ? (
             <span className="bg-on-surface px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-white">
-              На заказ
+              Архив
             </span>
           ) : null}
         </div>

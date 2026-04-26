@@ -1,5 +1,9 @@
 import type { CartItem, Product } from "./types";
 
+export type ResolvedCartLine =
+  | { item: CartItem; product: Product; status: "available" | "unavailable" }
+  | { item: CartItem; product: null; status: "missing" };
+
 export function addCartItem(items: CartItem[], slug: string): CartItem[] {
   const existing = items.find((item) => item.slug === slug);
 
@@ -40,4 +44,23 @@ export function calculateCartTotal(items: CartItem[], products: Product[]) {
 
 export function countCartItems(items: CartItem[]) {
   return items.reduce((total, item) => total + item.quantity, 0);
+}
+
+export function resolveCartLines(
+  items: CartItem[],
+  products: Product[]
+): ResolvedCartLine[] {
+  return items.map((item) => {
+    const product = products.find((candidate) => candidate.slug === item.slug);
+
+    if (!product) {
+      return { item, product: null, status: "missing" };
+    }
+
+    return {
+      item,
+      product,
+      status: product.available ? "available" : "unavailable"
+    };
+  });
 }

@@ -169,9 +169,18 @@ export function CatalogView({ products }: { products: Product[] }) {
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMobileFiltersOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.style.overflow = originalBodyOverflow;
       document.documentElement.style.overflow = originalRootOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [mobileFiltersOpen]);
 
@@ -547,7 +556,7 @@ export function CatalogView({ products }: { products: Product[] }) {
                 onClick={() => setMobileFiltersOpen(true)}
                 type="button"
               >
-                <SlidersHorizontal size={16} strokeWidth={1.8} />
+                <SlidersHorizontal aria-hidden="true" size={16} strokeWidth={1.8} />
                 Фильтры
                 {activeCount > 0 ? (
                   <span className="bg-white px-2 py-1 text-[10px] text-primary">
@@ -573,7 +582,7 @@ export function CatalogView({ products }: { products: Product[] }) {
                         type="button"
                       >
                         {filter.label}
-                        <X size={12} strokeWidth={1.8} />
+                        <X aria-hidden="true" size={12} strokeWidth={1.8} />
                       </button>
                     ))}
                     {filters.price.min !== defaultFilters.price.min ||
@@ -584,7 +593,7 @@ export function CatalogView({ products }: { products: Product[] }) {
                         type="button"
                       >
                         Цена
-                        <X size={12} strokeWidth={1.8} />
+                        <X aria-hidden="true" size={12} strokeWidth={1.8} />
                       </button>
                     ) : null}
                   </div>
@@ -594,7 +603,7 @@ export function CatalogView({ products }: { products: Product[] }) {
               <label className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-primary">
                 Сортировка
                 <select
-                  className="min-h-11 border border-outline-variant/40 bg-transparent px-3 text-xs uppercase tracking-[0.16em] text-primary outline-none"
+                  className="min-h-11 border border-outline-variant/40 bg-surface px-3 text-xs uppercase tracking-[0.16em] text-primary focus-visible:border-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                   onChange={(event) => setSingleParam("sort", event.target.value)}
                   value={sort}
                 >
@@ -635,14 +644,14 @@ export function CatalogView({ products }: { products: Product[] }) {
       </section>
 
       {mobileFiltersOpen ? (
-        <div className="fixed inset-0 lg:hidden" style={{ zIndex: 100 }}>
+        <div className="fixed inset-0 z-[100] lg:hidden">
           <button
             aria-label="Закрыть фильтры"
             className="absolute inset-0 bg-primary/45"
             onClick={() => setMobileFiltersOpen(false)}
             type="button"
           />
-          <aside className="absolute left-0 top-0 h-full w-[min(88vw,380px)] overflow-y-auto bg-surface px-6 py-8 shadow-2xl">
+          <aside className="absolute left-0 top-0 h-full w-[min(88vw,380px)] overflow-y-auto overscroll-contain bg-surface px-6 py-8 shadow-2xl">
             <div className="mb-8 flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.28em] text-secondary">
                 Подбор
@@ -653,7 +662,7 @@ export function CatalogView({ products }: { products: Product[] }) {
                 onClick={() => setMobileFiltersOpen(false)}
                 type="button"
               >
-                <X size={18} strokeWidth={1.8} />
+                <X aria-hidden="true" size={18} strokeWidth={1.8} />
               </button>
             </div>
             {renderFilterPanel()}

@@ -3,6 +3,7 @@ import {
   addCartItem,
   calculateCartTotal,
   removeCartItem,
+  resolveCartLines,
   updateCartQuantity
 } from "./cart";
 import { products } from "./products";
@@ -33,5 +34,28 @@ describe("cart utilities", () => {
     const cart = [{ slug: "verdant-soul-pendant", quantity: 2 }];
 
     expect(calculateCartTotal(cart, products)).toBe(248000);
+  });
+
+  it("resolves cart lines with unavailable and missing item states", () => {
+    const result = resolveCartLines(
+      [
+        { slug: "verdant-studs", quantity: 1 },
+        { slug: "missing-stone", quantity: 2 }
+      ],
+      products
+    );
+
+    expect(result).toEqual([
+      {
+        item: { slug: "verdant-studs", quantity: 1 },
+        product: products.find((product) => product.slug === "verdant-studs"),
+        status: "unavailable"
+      },
+      {
+        item: { slug: "missing-stone", quantity: 2 },
+        product: null,
+        status: "missing"
+      }
+    ]);
   });
 });

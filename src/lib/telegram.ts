@@ -71,7 +71,7 @@ export function buildTelegramCheckoutUrl({
   total: number;
 }) {
   const message = [
-    "Здравствуйте. Хочу оформить заказ GloWStone:",
+    "Здравствуйте. Хочу обсудить подбор GloWStone:",
     "",
     ...orderLines,
     "",

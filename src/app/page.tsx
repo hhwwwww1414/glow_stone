@@ -9,18 +9,18 @@ const heroImage =
 const processSteps = [
   {
     label: "01",
-    title: "Отобрано куратором",
-    text: "Мы работаем с готовыми камнями и проверенными поставщиками, выбирая выразительный природный рисунок и прозрачную историю происхождения."
+    title: "Рассмотрено",
+    text: "Сначала мы смотрим на рисунок камня: как ложится свет, где проходит жила, насколько форма просит оправу."
   },
   {
     label: "02",
-    title: "Сохранено",
-    text: "Форма изделия подстраивается под минерал, а не прячет его особенности."
+    title: "Собрано",
+    text: "Металл не спорит с минералом. Он держит его тихо, оставляя неровность, глубину и природный ритм видимыми."
   },
   {
     label: "03",
-    title: "Надето",
-    text: "Украшение становится личным предметом, а не сезонным аксессуаром."
+    title: "Передано",
+    text: "Изделие уходит не как быстрая покупка, а как предмет, о котором уже состоялся разговор."
   }
 ];
 
@@ -50,20 +50,39 @@ export default function Home() {
         <div className="relative z-10 mx-auto w-full max-w-screen-2xl px-6 py-24 md:px-12">
           <div className="max-w-3xl">
             <p className="mb-8 text-xs uppercase tracking-[0.34em] text-secondary-container">
-              Кураторские украшения из природных камней
+              Кабинет камня и ручной работы
             </p>
             <h1 className="font-serif text-5xl leading-[0.95] text-white md:text-8xl">
-              Украшения с характером, фактурой и историей.
+              Камни, металл и тихие истории на коже.
             </h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-white/72">
+              GloWStone собирает украшения как маленькие артефакты: без спешки,
+              без давления, с вниманием к фактуре и голосу материала.
+            </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <ButtonLink href="/catalog" variant="light">
-                В каталог
+                Рассмотреть изделия
               </ButtonLink>
               <ButtonLink href="/about" variant="inverseGhost">
-                О бренде
+                О мастерской
               </ButtonLink>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-surface px-6 py-10 md:px-12">
+        <div className="mx-auto grid max-w-screen-2xl gap-6 border-b border-outline-variant/20 pb-10 md:grid-cols-[220px_1fr_280px] md:items-end">
+          <p className="text-xs uppercase tracking-[0.28em] text-secondary">
+            Object note
+          </p>
+          <p className="max-w-3xl font-serif text-2xl leading-snug text-primary md:text-4xl">
+            В витрине остаются не только доступные изделия. Архивные предметы
+            помогают понять почерк мастерской и обсудить похожий камень.
+          </p>
+          <ButtonLink href="/catalog?available=true" variant="ghost">
+            Уточнить наличие
+          </ButtonLink>
         </div>
       </section>
 
@@ -95,9 +114,9 @@ export default function Home() {
       <section className="bg-surface-container-low py-28">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12">
           <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <h2 className="font-serif text-5xl text-primary">Камни и металл</h2>
+            <h2 className="font-serif text-5xl text-primary">Камни в витрине</h2>
             <ButtonLink href="/catalog" variant="ghost">
-              Смотреть все
+              Рассмотреть все
             </ButtonLink>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
@@ -111,7 +130,7 @@ export default function Home() {
       <section className="bg-primary py-28 text-white">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12">
           <h2 className="max-w-xl font-serif text-5xl italic leading-tight">
-            Как рождается изделие
+            Как предмет становится вашим
           </h2>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {processSteps.map((step) => (
@@ -130,7 +149,7 @@ export default function Home() {
           Подбор по настроению
         </p>
         <h2 className="mx-auto mt-6 max-w-2xl font-serif text-5xl leading-tight text-primary">
-          Найдите украшение, которое совпадает с вашим ритуалом.
+          Выберите не категорию, а состояние, с которым хочется жить рядом.
         </h2>
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {moodLinks.map((mood) => (
